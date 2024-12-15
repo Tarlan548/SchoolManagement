@@ -1,0 +1,30 @@
+﻿<div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Create lesson</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Lesson" asp-action="Create" method="post">
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="txtLessonName" class="form-control" name="Name" required>
+                        <label class="form-label" for="lessonName">Lesson name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="txtDescription" class="form-control" name="Description">
+                        <label class="form-label" for="lessonDescription">Description</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" id="txtClassLevel" class="form-control" name="ClassLevel" required>
+                        <label class="form-label" for="classLevel">Class Level</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" id="btnPost" class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
