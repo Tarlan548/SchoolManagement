@@ -19,6 +19,7 @@ COPY ["src/Services/Exam/Infrastructure/Exam.Persistence/Exam.Persistence.csproj
 RUN dotnet restore "./src/Services/Exam/Presentation/Exam.API/Exam.API.csproj"
 COPY . .
 WORKDIR "/src/Services/Exam/Presentation/Exam.API"
+RUN ls -la 
 RUN dotnet build "./Exam.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
