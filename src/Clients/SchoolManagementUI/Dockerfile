@@ -15,7 +15,7 @@ WORKDIR /src
 COPY ["src/Clients/SchoolManagementUI/SchoolManagementUI.csproj", "src/Clients/SchoolManagementUI/"]
 RUN dotnet restore "./src/Clients/SchoolManagementUI/SchoolManagementUI.csproj"
 COPY . .
-WORKDIR "/src/src/Clients/SchoolManagementUI"
+WORKDIR "src/Clients/SchoolManagementUI"
 RUN dotnet build "./SchoolManagementUI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
