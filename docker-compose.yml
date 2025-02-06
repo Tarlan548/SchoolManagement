@@ -35,7 +35,7 @@ services:
     image: schoolmanagement/exam:1.0
     build:
       context: .
-      dockerfile: SchoolManagement/src/Services/Exam/Presentation/Exam.API/Dockerfile
+      dockerfile: src/Services/Exam/Presentation/Exam.API/Dockerfile
     hostname: exam
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -55,7 +55,7 @@ services:
     image: schoolmanagement/exam:1.0
     build:
       context: .
-      dockerfile: SchoolManagement/src/Clients/SchoolManagementUI/Dockerfile
+      dockerfile: src/Clients/SchoolManagementUI/Dockerfile
     hostname: exam_ui
     ports:
       - 5068:8080
