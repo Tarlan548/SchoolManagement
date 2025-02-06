@@ -1,7 +1,11 @@
 ﻿version: "3.8"
 
 services:
+<<<<<<< HEAD
 
+=======
+#Database Postgre-db_user_repo/
+>>>>>>> a25e86b3f55c7344d60f6bcba4a38c4eabeb8257
   db_exam:
     image: postgres:16
     restart: always
@@ -25,12 +29,16 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
     networks:
       - internal_network
+<<<<<<< HEAD
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U web_user -d SchoolManagement"]
       interval: 10s
       timeout: 5s
       retries: 5
 
+=======
+#exam service
+>>>>>>> a25e86b3f55c7344d60f6bcba4a38c4eabeb8257
   exam:
     image: schoolmanagement/exam:1.0
     build:
@@ -61,6 +69,7 @@ services:
       - 5068:8080
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
+<<<<<<< HEAD
     deploy:
       restart_policy:
         condition: on-failure
@@ -72,6 +81,28 @@ services:
       - internal_network
       - external_network 
 
+=======
+      deploy:
+        restart_policy:
+          condition: on-failure
+        replicas: 1
+      depends_on:
+      - db_exam
+      networks:
+        - internal_network
+        - external_network 
+
+# #nginx
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - "8585:80"
+#     depends_on:
+#       - exam
+#     networks:
+#       - internal_network
+#       - external_network 
+>>>>>>> a25e86b3f55c7344d60f6bcba4a38c4eabeb8257
 secrets:
   postgres-password:
     external: true
