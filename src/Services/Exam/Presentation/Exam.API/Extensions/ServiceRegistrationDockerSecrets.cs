@@ -7,10 +7,10 @@ public static class ServiceRegistrationDockerSecrets
         var secretPath = "/run/secrets";
         var secrets = new Dictionary<string, string?>();
 
-        if (File.Exists(System.IO.Path.Combine(secretPath, "postgres_password")))
+        if (File.Exists(System.IO.Path.Combine(secretPath, "postgres-password")))
         {
             var postgresPassword = (await File.ReadAllTextAsync(System.IO.Path.Combine(secretPath, "postgres-password"))).Trim();
-            secrets.Add("ConnectionStrings:PostgreDB", $"Host=restohub_db_exam;Database=SchoolManagement;User ID=web_user;Password={postgresPassword};TrustServerCertificate=True");
+            secrets.Add("ConnectionStrings:PostgreDB", $"Host=schoolmanagement_db_exam;Database=SchoolManagement;User ID=web_user;Password={postgresPassword};TrustServerCertificate=True");
         }
         builder.Configuration.AddInMemoryCollection(secrets);
     }

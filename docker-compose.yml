@@ -29,7 +29,7 @@ services:
 
 #exam service
   exam:
-      image: tabis/exam:1.0
+      image: schoolmanagement/exam:1.0
       build:
        context: .
        dockerfile: Services/Exam/Presentation/Exam.API/Dockerfile
@@ -49,7 +49,7 @@ services:
  
 #exam service
   exam_ui:
-      image: tabis/exam:1.0
+      image: schoolmanagement/exam:1.0
       build:
        context: .
        dockerfile: Clients/SchoolManagementUI/Dockerfile
