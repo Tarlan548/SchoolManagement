@@ -15,7 +15,7 @@ public static class ServiceRegistration
     {
         services.AddDbContext<SchoolDbContext>(opt =>
         {
-            opt.UseSqlServer(configuration.GetConnectionString("mssql-connection"));
+            opt.UseNpgsql(configuration.GetConnectionString("PostgreDB"));
         });
 
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));

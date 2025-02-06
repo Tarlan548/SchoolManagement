@@ -11,7 +11,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
         builder.HasKey(s => s.Id);
 
         builder.Property(x => x.Id)
-            .HasDefaultValueSql("NEWSEQUENTIALID()");
+            .HasDefaultValueSql("uuid_generate_v4()");
 
         builder.Property(s => s.FirstName)
                .IsRequired()

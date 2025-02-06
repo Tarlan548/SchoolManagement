@@ -13,10 +13,10 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
         builder.HasIndex(x => x.Name, "UQ_Lesson_Name").IsUnique();
 
         builder.Property(x => x.Id)
-            .HasDefaultValueSql("NEWSEQUENTIALID()");
+            .HasDefaultValueSql("uuid_generate_v4()");
 
         builder.Property(x => x.CreatedDate)
-            .HasDefaultValueSql("GETDATE()");
+            .HasDefaultValueSql("Now()");
 
         builder.Property(x => x.IsDeleted)
             .HasDefaultValue(false);

@@ -10,7 +10,7 @@ public class TeacherConfiguration : IEntityTypeConfiguration<Teacher>
         builder.HasKey(t => t.Id);
 
         builder.Property(x => x.Id)
-               .HasDefaultValueSql("NEWSEQUENTIALID()");
+               .HasDefaultValueSql("uuid_generate_v4()");
 
         builder.Property(t => t.FirstName)
                .IsRequired()
@@ -21,7 +21,7 @@ public class TeacherConfiguration : IEntityTypeConfiguration<Teacher>
                .HasMaxLength(50);
 
         builder.Property(t => t.CreatedDate)
-               .HasDefaultValueSql("GETDATE()");
+               .HasDefaultValueSql("Now()");
 
         builder.Property(t => t.IsDeleted)
                .HasDefaultValue(false);

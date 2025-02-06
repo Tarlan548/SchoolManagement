@@ -14,6 +14,7 @@ public class SchoolDbContext(DbContextOptions<SchoolDbContext> options) : DbCont
     public virtual required DbSet<LessonTeacher> LessonTeachers { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.HasPostgresExtension("uuid-ossp");
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
