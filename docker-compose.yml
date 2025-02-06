@@ -1,6 +1,5 @@
 ﻿﻿version: "3.8"
 services:
-
 #Database Postgre-db_user_repo/
   db_exam:
     image: postgres:16
@@ -25,8 +24,6 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
     networks:
       - internal_network
- 
-
 #exam service
   exam:
       image: schoolmanagement/exam:1.0
@@ -78,8 +75,6 @@ services:
 #     networks:
 #       - internal_network
 #       - external_network 
-
-
 secrets:
   postgres-password:
     external: true
