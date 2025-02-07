@@ -52,7 +52,7 @@ services:
       - internal_network
 
   exam_ui:
-    image: schoolmanagement/exam:1.0
+    image: schoolmanagement/examui:1.0
     build:
       context: .
       dockerfile: src/Clients/SchoolManagementUI/Dockerfile
