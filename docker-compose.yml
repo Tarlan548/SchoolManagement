@@ -33,7 +33,7 @@ services:
       dockerfile: src/Services/Exam/Presentation/Exam.API/Dockerfile
     hostname: exam
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
     secrets:
       - postgres-password
     deploy:
@@ -54,7 +54,7 @@ services:
     ports:
       - 5068:8080
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
     deploy:
       restart_policy:
         condition: on-failure
