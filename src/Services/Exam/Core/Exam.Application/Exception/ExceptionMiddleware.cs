@@ -56,7 +56,6 @@ public class ExceptionMiddleware : IMiddleware
         await httpContext.Response.WriteAsync(JsonSerializer.Serialize(problemDetails));
     }
 
-
     private static int GetStatusCode(System.Exception exception)
     {
         return exception switch
