@@ -1,3 +1,4 @@
+using Exam.API.Extensions;
 using Exam.Application;
 using Exam.Application.Exception;
 using Exam.Persistence;
@@ -20,7 +21,13 @@ builder.Services.AddApplicationRegistration(builder.Configuration);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+
+if (env.IsProduction())
+{
+    await ServiceRegistrationDockerSecrets.AddSecretsAsync(builder);
+}
+
+if (env.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
