@@ -12,11 +12,14 @@ internal class LessonTeacherConfiguration : IEntityTypeConfiguration<Domain.Enti
 
         builder.HasOne(lt => lt.Lesson)
             .WithMany(l => l.LessonTeachers)
-            .HasForeignKey(lt => lt.LessonId);
+            .HasForeignKey(lt => lt.LessonId)
+            .OnDelete(DeleteBehavior.SetNull);
 
         builder.HasOne(lt => lt.Teacher)
             .WithMany(t => t.LessonTeachers)
             .HasForeignKey(lt => lt.TeacherId);
+
+        builder.HasQueryFilter(lt => !lt.Lesson.IsDeleted);
 
         builder.ToTable("LessonTeachers");
     }

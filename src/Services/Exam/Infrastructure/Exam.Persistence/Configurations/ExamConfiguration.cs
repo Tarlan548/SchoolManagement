@@ -19,6 +19,7 @@ public class ExamConfiguration : IEntityTypeConfiguration<Domain.Entities.Exam>
 
         builder.Property(x => x.IsDeleted)
             .HasDefaultValue(false);
+
         builder.HasQueryFilter(x => !x.IsDeleted);
 
         builder.Property(x => x.Name)

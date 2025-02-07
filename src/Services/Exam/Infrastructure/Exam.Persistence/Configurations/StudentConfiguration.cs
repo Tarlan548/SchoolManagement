@@ -26,7 +26,7 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
                .HasDefaultValue(1);
 
         builder.Property(s => s.CreatedDate)
-               .HasDefaultValueSql("GETDATE()");
+               .HasDefaultValueSql("Now()");
 
         builder.Property(s => s.IsDeleted)
                .HasDefaultValue(false);
