@@ -25,11 +25,6 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
     networks:
       - internal_network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U web_user -d SchoolManagement"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 #exam service
   exam:
     image: schoolmanagement/exam:1.0
@@ -46,8 +41,7 @@ services:
         condition: on-failure
       replicas: 1
     depends_on:
-      db_exam:
-        condition: service_healthy
+      - db_exam
     networks:
       - internal_network
 
@@ -66,8 +60,7 @@ services:
         condition: on-failure
       replicas: 1
     depends_on:
-      db_exam:
-        condition: service_healthy
+      - db_exam
     networks:
       - internal_network
       - external_network 
