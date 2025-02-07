@@ -31,8 +31,6 @@ builder.Services.AddScoped<ITeacherService, TeacherService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IExamService, ExamService>();
 
-
-
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
