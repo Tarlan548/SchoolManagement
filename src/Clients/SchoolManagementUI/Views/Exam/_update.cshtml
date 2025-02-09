@@ -1,0 +1,53 @@
+﻿<div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="update-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="update-modal-label">Update</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-controller="Exam" asp-action="Update" method="post">
+                <input type="hidden" id="txtUpdateId" name="Id">
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="txtUpdateExamName" class="form-control" name="Name" required>
+                        <label class="form-label" for="txtUpdateExamName">Exam name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select id="selectUpdateLesson" class="form-select" name="LessonId" required>
+                            <option value="">Select a lesson</option>
+                            @foreach (var item in ViewBag.Lesson as List<LessonViewModel>)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                        <label for="selectUpdateLesson">Lesson name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <select id="selectUpdateStudent" class="form-select" name="StudentId" required>
+                            <option value="">Select a student</option>
+                            @foreach (var item in ViewBag.Student as List<StudentViewModel>)
+                            {
+                                <option value="@item.Id">@item.FirstName @item.LastName</option>
+                            }
+                        </select>
+                        <label for="selectUpdateStudent">Student name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="datetime" id="txtUpdateExamDate" class="form-control" name="ExamDate" required>
+                        <label class="form-label" for="txtUpdateExamDate">Exam date</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" id="txtUpdateExamResult" class="form-control" name="ExamResult" required>
+                        <label class="form-label" for="txtUpdateExamResult">Exam result</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
