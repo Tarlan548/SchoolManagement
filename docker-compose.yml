@@ -1,0 +1,87 @@
+﻿version: "3.8"
+
+services:
+#Database Postgre-db_user_repo/
+  db_exam:
+    image: postgres:16
+    restart: always
+    hostname: db_exam
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 4096M
+    ports:
+      - 5434:5432
+    volumes:
+      - /home/restohub/databases/examdb/var/lib/postgresql/data:/var/lib/postgresql/data
+    secrets:
+      - postgres-password
+    environment:
+      POSTGRES_USER: web_user
+      POSTGRES_DB: SchoolManagement
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U web_user -d SchoolManagement"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+#exam service
+  exam:
+    image: schoolmanagement/exam:1.0
+    build:
+      context: .
+      dockerfile: Services/Exam/Presentation/Exam.API/Dockerfile
+    hostname: exam
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    secrets:
+      - postgres-password
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 1
+    depends_on:
+      db_exam:
+        condition: service_healthy
+    networks:
+      - internal_network
+
+  exam_ui:
+    image: schoolmanagement/exam:1.0
+    build:
+      context: .
+      dockerfile: Clients/SchoolManagementUI/Dockerfile
+    hostname: exam_ui
+    ports:
+      - 5068:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 1
+    depends_on:
+      db_exam:
+        condition: service_healthy
+    networks:
+      - internal_network
+      - external_network 
+
+secrets:
+  postgres-password:
+    external: true
+
+networks:
+  internal_network:
+    driver: overlay
+    internal: true
+    attachable: true
+
+  external_network:
+    driver: overlay
+    external: true
