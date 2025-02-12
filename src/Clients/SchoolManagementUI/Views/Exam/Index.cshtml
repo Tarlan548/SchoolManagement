@@ -1,0 +1,34 @@
+﻿<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#post-modal">Create</button>
+</div>
+<div class="ml-5">
+    <partial name="_main-table"></partial>
+    <partial name="_create"></partial>
+    <partial name="_update"></partial>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const updateModal = document.getElementById('update-modal');
+
+            updateModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const examname = button.getAttribute('data-examname');
+                const lessonid = button.getAttribute('data-lessonid');
+                const studentid = button.getAttribute('data-studentid');
+                const examdate = button.getAttribute('data-examdate');
+                const examresult = button.getAttribute('data-examresult');
+
+                document.getElementById('txtUpdateId').value = id;
+                document.getElementById('txtUpdateExamName').value = examname;
+                document.getElementById('selectUpdateLesson').value = lessonid;
+                document.getElementById('selectUpdateStudent').value = studentid;
+                document.getElementById('txtUpdateExamDate').value = examdate;
+                document.getElementById('txtUpdateExamResult').value = examresult;
+            });
+        });
+    </script>
+}

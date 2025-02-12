@@ -1,0 +1,31 @@
+﻿<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#post-modal">Create</button>
+</div>
+<div class="ml-5">
+    <partial name="_main-table"></partial>
+    <partial name="_create"></partial>
+    <partial name="_update"></partial>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const updateModal = document.getElementById('update-modal');
+
+            updateModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-firstname');
+                const lastname = button.getAttribute('data-lastname');
+                const classlevel = button.getAttribute('data-classlevel');
+
+                document.getElementById('txtUpdateId').value = id;
+                document.getElementById('txtUpdateFirstName').value = name;
+                document.getElementById('txtUpdateLastName').value = lastname;
+                document.getElementById('txtUpdateClassLevel').value = classlevel;
+
+            });
+        });
+    </script>
+}

@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container py-5">
+    <div class="text-center">
+        <h1 class="display-3 fw-bold text-primary">Welcome to School Management</h1>
+        <p class="lead text-muted">
+            Easily manage your school's lessons, students, teachers, and exams.
+        </p>
+    </div>
+
+    <div class="row mt-5 justify-content-center">
+        <!-- Card for Lessons -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Lessons</h5>
+                    <p class="card-text">View and manage all lessons available in the system.</p>
+                    <a href="/Lesson/Index" class="btn btn-primary btn-sm">Manage Lessons</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Students -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">Students</h5>
+                    <p class="card-text">Track and manage student information efficiently.</p>
+                    <a href="/Student/Index" class="btn btn-success btn-sm">Manage Students</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Teachers -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-warning">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning">Teachers</h5>
+                    <p class="card-text">View and organize teacher records effectively.</p>
+                    <a href="/Teacher/Index" class="btn btn-warning btn-sm">Manage Teachers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Exams -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-danger">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-danger">Exams</h5>
+                    <p class="card-text">Plan, schedule, and review exams with ease.</p>
+                    <a href="/Exam/Index" class="btn btn-danger btn-sm">Manage Exams</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center">
+        <a href="#" class="btn btn-outline-primary btn-lg px-5">Go to Dashboard</a>
+    </div>
+</div>
