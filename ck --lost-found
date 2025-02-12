@@ -1,0 +1,73 @@
+[33m760ae48[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/new_master[m[33m, [m[1;32mnew_master[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/master
+[33m760ae48[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/new_master[m[33m, [m[1;32mnew_master[m[33m)[m HEAD@{1}: rebase (continue): asdasd
+[33m90eb061[m HEAD@{2}: rebase (pick): docker-compose updated
+[33m6219103[m HEAD@{3}: rebase (pick): asd
+[33m857f702[m HEAD@{4}: rebase (pick): Delete src/Services/Exam/Presentation/Exam.API/appsettings.Development.json
+[33mc300f5b[m HEAD@{5}: rebase (pick): asd
+[33m1040ef9[m HEAD@{6}: commit: asd
+[33mc261fcc[m HEAD@{7}: rebase (pick): asd
+[33m8c730a5[m HEAD@{8}: rebase (pick): asd
+[33me5f9549[m HEAD@{9}: rebase (continue): asd
+[33m43a9d5c[m HEAD@{10}: rebase (pick): asd
+[33m417c80c[m HEAD@{11}: rebase (pick): asd
+[33m1708ffe[m HEAD@{12}: rebase (pick): asd
+[33m3e02ebd[m HEAD@{13}: rebase (pick): asd
+[33me71d1a2[m HEAD@{14}: rebase (pick): asd
+[33m63af9de[m HEAD@{15}: rebase (pick): asd
+[33m7124d38[m HEAD@{16}: rebase (pick): asd
+[33m1baabd3[m HEAD@{17}: rebase (pick): asd
+[33md2db573[m HEAD@{18}: rebase (continue): asd
+[33maf2f7d8[m HEAD@{19}: rebase (pick): asd
+[33m59c495d[m HEAD@{20}: rebase (pick): asd
+[33m8bbfdb7[m HEAD@{21}: revert: Revert "Delete src/Services/Exam/Presentation/Exam.API/appsettings.Development.json"
+[33m8887a3d[m HEAD@{22}: commit: new project
+[33m98e4506[m HEAD@{23}: commit (initial): Initial commit with last 5 commits
+[33m94cb2fe[m HEAD@{24}: reset: moving to HEAD~5
+[33m2ce7bae[m HEAD@{25}: rebase: fast-forward
+[33mc749f43[m HEAD@{26}: rebase: fast-forward
+[33m6288025[m HEAD@{27}: rebase: fast-forward
+[33m5c118d0[m HEAD@{28}: rebase: fast-forward
+[33m1fe21a2[m HEAD@{29}: rebase: fast-forward
+[33m94cb2fe[m HEAD@{30}: rebase: fast-forward
+[33m0fe9738[m HEAD@{31}: rebase (start): checkout 0fe9738ed6afd856cf9fba8eb915ad05ea5be19c
+[33maadf3f8[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{32}: reset: moving to HEAD~5
+[33m2daadc6[m HEAD@{33}: rebase (finish): returning to refs/heads/master
+[33m2daadc6[m HEAD@{34}: rebase (start): checkout HEAD~10
+[33m2daadc6[m HEAD@{35}: rebase (finish): returning to refs/heads/master
+[33m2daadc6[m HEAD@{36}: rebase (pick): Revert "Delete src/Services/Exam/Presentation/Exam.API/appsettings.Development.json"
+[33me0deb91[m HEAD@{37}: rebase (start): checkout origin/master
+[33m85f95b3[m HEAD@{38}: revert: Revert "Delete src/Services/Exam/Presentation/Exam.API/appsettings.Development.json"
+[33m3164e1d[m HEAD@{39}: rebase (finish): returning to refs/heads/master
+[33m3164e1d[m HEAD@{40}: rebase (pick): SEO configuration
+[33mcb616b9[m HEAD@{41}: rebase (pick): google analyitcs added
+[33m2e4677e[m HEAD@{42}: rebase (pick): added Google tag
+[33mfda3925[m HEAD@{43}: rebase (pick): asdasd
+[33md5ac6bc[m HEAD@{44}: rebase (pick): asdasd
+[33m476491c[m HEAD@{45}: rebase (pick): docker-compose updated
+[33m5350d8a[m HEAD@{46}: rebase (pick): docker-compose updated
+[33m3ebb3dc[m HEAD@{47}: rebase (pick): docker-compose updated
+[33m00712cc[m HEAD@{48}: rebase (pick): Delete src/Clients/SchoolManagementUI/appsettings.Development.json
+[33ma894ea5[m HEAD@{49}: rebase (pick): asd
+[33m3a7984b[m HEAD@{50}: rebase (pick): asd
+[33m7239e14[m HEAD@{51}: rebase (pick): asd
+[33m1c294f7[m HEAD@{52}: rebase (pick): Delete src/Services/Exam/Presentation/Exam.API/appsettings.Development.json
+[33m805906f[m HEAD@{53}: rebase (start): checkout 1822c53cfcdb0a03fde205866e2cd4a4a7ac16ca^
+[33me0deb91[m HEAD@{54}: commit: SEO configuration
+[33m151ba80[m HEAD@{55}: commit: google analyitcs added
+[33m00fcc65[m HEAD@{56}: commit: added Google tag
+[33m3121b59[m HEAD@{57}: commit: asdasd
+[33maadf3f8[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{58}: commit: asdasd
+[33mf02451a[m HEAD@{59}: commit: docker-compose updated
+[33m97422ec[m HEAD@{60}: commit: docker-compose updated
+[33m7f46296[m HEAD@{61}: commit: docker-compose updated
+[33ma9e04b4[m HEAD@{62}: pull: Fast-forward
+[33mbade815[m HEAD@{63}: commit: asd
+[33m4443260[m HEAD@{64}: commit: asd
+[33mf6c387e[m HEAD@{65}: commit: asd
+[33m0f51f99[m HEAD@{66}: pull: Merge made by the 'ort' strategy.
+[33m805906f[m HEAD@{67}: commit: asd
+[33m8a20c8e[m HEAD@{68}: commit: asd
+[33m9ece066[m HEAD@{69}: commit: asd
+[33mcd4b209[m HEAD@{70}: commit: asd
+[33m6c29eae[m HEAD@{71}: commit: asd
+[33m5977305[m HEAD@{72}: clone: from https://github.com/Tarlan548/SchoolManagement
